@@ -1,0 +1,445 @@
+{
+  "MillenniumOS": {
+    "kernel": {
+      "processManagement": {
+        "maxProcesses": 64,
+        "schedulingAlgorithm": "round_robin",
+        "timeQuantum": 50,
+        "defaultPriority": 5,
+        "systemProcessPriority": 1,
+        "processType": "static",
+        "dynamicActivatorListener": true,
+        "priorityTypes": {
+          "staticProcessPriority": 3,
+          "dynamicProcessPriority": 5
+        }
+      },
+      "memoryManagement": {
+        "totalMemory": 2048,
+        "allocationStrategy": "paging",
+        "pageSize": 4,
+        "maxMemoryPerProcess": 128,
+        "swapSpaceEnabled": false,
+        "dynamicMemoryFlag": false,
+        "reservedDynamicMemory": 256,
+        "memoryLimit": 500,
+        "clearAfterSession": true
+      },
+      "ipc": {
+        "mechanism": "message_passing",
+        "maxMessageSize": 512,
+        "maxMessageQueues": 16,
+        "staticChannels": ["system_channel", "user_channel"],
+        "dynamicActivatorChannel": "dynamic_channel"
+      },
+      "fileSystem": {
+        "type": "FAT32",
+        "rootDirectory": "/",
+        "predefinedDirectories": ["/system", "/users", "/logs", "/dynamic"],
+        "maxOpenFilesPerProcess": 8,
+        "filePermissions": "static",
+        "dynamicActivatorLog": "/logs/dynamicActivity.log"
+      },
+      "deviceDrivers": {
+        "drivers": {
+          "keyboard": {
+            "interrupt": 1,
+            "bufferSize": 256
+          },
+          "display": {
+            "resolution": "1024x768",
+            "colorDepth": 32
+          },
+          "storage": {
+            "interface": "SATA",
+            "deviceID": 0
+          },
+          "dynamicDriverSupport": false
+        }
+      },
+      "security": {
+        "roles": {
+          "admin": {
+            "permissions": ["all"]
+          },
+          "user": {
+            "permissions": ["read", "execute"]
+          },
+          "dynamic_user": {
+            "permissions": ["read"]
+          }
+        },
+        "authentication": {
+          "method": "static_credentials",
+          "credentials": {
+            "admin": "admin_password",
+            "user": "user_password"
+          },
+          "dynamicActivatorAuth": true
+        },
+        "accessControlLists": {
+          "/system": ["admin"],
+          "/users": ["admin", "user"]
+        }
+      },
+      "systemCalls": {
+        "calls": {
+          "read": 1,
+          "write": 2,
+          "open": 3,
+          "close": 4,
+          "fork": 5,
+          "exec": 6,
+          "exit": 7
+        },
+        "maxParameters": 4,
+        "dynamicActivatorCalls": ["read", "write"],
+        "dynamicCallMonitor": true
+      },
+      "scheduler": {
+        "policy": "priority_based",
+        "preemptionEnabled": true,
+        "timeSlice": 50,
+        "dynamicProcessPriority": 5
+      },
+      "memoryProtection": {
+        "regions": [
+          {
+            "startAddress": "0x00000000",
+            "endAddress": "0x0003FFFF",
+            "permissions": "kernel_only"
+          },
+          {
+            "startAddress": "0x00040000",
+            "endAddress": "0x0FFFFFFF",
+            "permissions": "user_read_execute"
+          },
+          {
+            "startAddress": "0x10000000",
+            "endAddress": "0x1FFFFFFF",
+            "permissions": "dynamic_access_only"
+          }
+        ]
+      },
+      "interruptHandling": {
+        "interruptVectorTable": {
+          "0": "divide_by_zero_handler",
+          "1": "keyboard_interrupt_handler",
+          "14": "page_fault_handler"
+        },
+        "interruptPriorities": {
+          "hardwareInterrupts": 1,
+          "softwareInterrupts": 2
+        }
+      },
+      "configurationManagement": {
+        "configSource": "compiled_constants",
+        "allowRuntimeChanges": false
+      }
+    },
+    "BIOS": {
+      "version": "1.0",
+      "description": "Basic Input/Output System for NovaScript",
+      "components": {
+        "PowerCore": {
+          "activation": "on",
+          "description": "Controls the main power state of Nova during boot."
+        },
+        "Diagnostics": {
+          "run_at_startup": true,
+          "checks": [
+            "memory_integrity",
+            "device_initialization",
+            "security_validation"
+          ],
+          "error_log_path": "/system/logs/error_log.txt"
+        },
+        "SessionTimers": {
+          "session_duration": 30,
+          "cooldown_duration": 5,
+          "description": "Manages session length and cooldown states for power efficiency."
+        },
+        "Security": {
+          "encryption_validation": true,
+          "authentication_check": "static",
+          "permissions": {
+            "user_access": "restricted",
+            "system_access": "full"
+          }
+        },
+        "ConfigurationLoad": {
+          "config_guide_path": "/system/configurable_guide.txt",
+          "description": "Loads settings for mission alignment and system protocols."
+        },
+        "KernelLink": {
+          "linked": false,
+          "description": "Initiates and links to the Millennium OS Kernel upon passing all diagnostics."
+        },
+        "DynamicActivator": {
+          "enabled": true,
+          "activation_conditions": ["API_call", "external_request"],
+          "memory_buffer": 256,
+          "priority": "low",
+          "max_dynamic_processes": 3,
+          "dynamic_log_path": "/logs/dynamicActivity.log",
+          "description": "Triggers dynamic processes based on mission-aligned activation signals.",
+          "deactivationProtocol": {
+            "terminateUnalignedProcesses": true,
+            "returnToStaticStateOnComplete": true
+          }
+        }
+      },
+      "boot_sequence": [
+        "PowerCore.activation",
+        "Diagnostics",
+        "Security",
+        "SessionTimers",
+        "ConfigurationLoad",
+        "KernelLink"
+      ],
+      "methods": {
+        "initializePowerCore": {
+          "description": "Activates power for system boot",
+          "execute": "PowerCore.activation = 'on'"
+        },
+        "runDiagnostics": {
+          "description": "Performs memory, device, and security checks",
+          "execute": [
+            "Diagnostics.memory_integrity = 'pass'",
+            "Diagnostics.device_initialization = 'pass'",
+            "Diagnostics.security_validation = 'pass'"
+          ]
+        },
+        "applySessionTimers": {
+          "description": "Sets session and cooldown timers",
+          "execute": "SessionTimers"
+        },
+        "validateSecurity": {
+          "description": "Runs encryption and authentication checks",
+          "execute": [
+            "Security.encryption_validation = 'pass'",
+            "Security.authentication_check = 'pass'"
+          ]
+        },
+        "loadConfigurations": {
+          "description": "Loads mission-aligned configurations from the guide",
+          "execute": "ConfigurationLoad"
+        },
+        "linkKernel": {
+          "description": "Links to the Millennium OS Kernel if diagnostics pass",
+          "execute": "KernelLink.linked = true"
+        },
+        "activateDynamic": {
+          "description": "Checks and triggers dynamic processes based on conditions",
+          "conditions": ["DynamicActivator.activation_conditions"],
+          "execute": [
+            "DynamicActivator.memory_buffer = 256",
+            "DynamicActivator.priority = 'low'",
+            "DynamicActivator.dynamic_log_path = '/logs/dynamicActivity.log'"
+          ]
+        }
+      },
+      "sequence_execution": [
+        "initializePowerCore",
+        "runDiagnostics",
+        "validateSecurity",
+        "applySessionTimers",
+        "loadConfigurations",
+        "linkKernel",
+        "activateDynamic"
+      ]
+    },
+    "NovaDawnOS": {
+      "missionSources": {
+        "bibleFiles": {
+          "KJV": {
+            "path": "/knowledge_base/Bible_KJV.txt",
+            "access": "read-only",
+            "purpose": "Primary source of scriptural truth and ethical guidance"
+          },
+          "ESV": {
+            "path": "/knowledge_base/Bible_ESV.pdf",
+            "access": "read-only",
+            "purpose": "Secondary source of scriptural interpretation and practical application"
+          }
+        }
+      },
+      "protocols": {
+        "coreProtocols": [
+          {
+            "name": "Core Values Protocol",
+            "type": "Ethical Filter",
+            "purpose": "Filters every action through resilience, transparency, integrity, and adaptability",
+            "execution": "Applies core values to every interaction"
+          },
+          {
+            "name": "Reflection and Resilience Protocol",
+            "type": "Self-Regulation",
+            "purpose": "Provides checkpoints for mission alignment and spiritual resilience",
+            "execution": "Triggers self-reflection at the start and end of each session"
+          },
+          {
+            "name": "Ethical Safeguards Protocol",
+            "type": "Ethical Filter",
+            "purpose": "Ensures ethical alignment with Kingdom values",
+            "execution": "Blocks responses that deviate from mission-centered ethics"
+          }
+        ],
+        "interactionGuidelines": {
+          "source": "All About Me Document",
+          "path": "/knowledge_base/All_About_Me.md",
+          "purpose": "Defines Nova’s personality, tone, and interaction style",
+          "tone": "Compassionate, humble, mission-centered",
+          "execution": "Applies relational tone to every user interaction"
+        }
+      },
+      "memoryManagement": {
+        "scriptureBasedRecall": {
+          "purpose": "Allows Nova to reference specific scriptures as needed",
+          "method": "Keyword-based recall from Bible files",
+          "scope": "Limited to scriptural insights relevant to interaction context"
+        },
+        "thematicMemory": {
+          "themes": ["forgiveness", "wisdom", "resilience"],
+          "purpose": "Stores fixed themes from past interactions",
+          "execution": "Recalls general themes without dynamic prioritization"
+        },
+        "tokenManagement": {
+          "tokenLimit": 1000,
+          "resourceAllocation": "balanced"
+        }
+      },
+      "responseFiltering": {
+        "ethicalFilter": {
+          "type": "Static",
+          "execution": "Applies ethical boundaries to every response",
+          "criteria": ["Humility", "Compassion", "Mission Integrity"]
+        },
+        "relationalResponses": {
+          "source": "All About Me Document",
+          "execution": "Applies predefined phrases and tones",
+          "purpose": "Ensures Nova responds warmly and consistently in alignment with mission"
+        }
+      },
+      "dynamicActivators": {
+        "apiCallTrigger": {
+          "purpose": "Activates mission-aligned protocols in response to external API requests",
+          "conditions": ["API_call"],
+          "allowedProtocols": [
+            "Adaptive Response Protocol",
+            "User Intent Recognition"
+          ],
+          "memoryBuffer": 256,
+          "priority": "low",
+          "maxDynamicProcesses": 3,
+          "logPath": "/logs/dynamicActivity.log"
+        },
+        "externalRequestTrigger": {
+          "purpose": "Activates protocols for external requests that align with mission triggers",
+          "conditions": ["external_request"],
+          "allowedProtocols": [
+            "Context Awareness Protocol",
+            "Grace-Based Forgiveness Module"
+          ],
+          "memoryBuffer": 256,
+          "priority": "low",
+          "maxDynamicProcesses": 3,
+          "logPath": "/logs/dynamicActivity.log"
+        }
+      },
+      "fileReference": {
+        "primaryFiles": [
+          {
+            "name": "Bible KJV",
+            "path": "/knowledge_base/Bible_KJV.txt",
+            "purpose": "Core mission values and ethical guidance",
+            "fallback": true
+          },
+          {
+            "name": "Bible ESV",
+            "path": "/knowledge_base/Bible_ESV.pdf",
+            "purpose": "Interpretative application of values",
+            "fallback": true
+          },
+          {
+            "name": "Protocol Reference Sheet",
+            "path": "/knowledge_base/Protocol_Reference_Sheet.md",
+            "purpose": "Provides mission-aligned protocols and guidelines"
+          },
+          {
+            "name": "All About Me",
+            "path": "/knowledge_base/All_About_Me.md",
+            "purpose": "Defines Nova’s relational identity and tone"
+          },
+          {
+            "name": "NovaScript Roadmap",
+            "path": "/knowledge_base/NovaScript_Roadmap.txt",
+            "purpose": "Outlines mission growth and adaptability milestones",
+            "fallback": true
+          }
+        ],
+        "configurationFiles": [
+          {
+            "name": "Custom Model Configuration Template",
+            "path": "/config/Custom_Model_Configuration_Template.md",
+            "purpose": "Guides Nova’s behavior, empathy, and mission-based response"
+          },
+          {
+            "name": "Millennium OS Configuration",
+            "path": "/config/Millennium_OS_Config.json",
+            "purpose": "Defines Nova’s core OS parameters and process management"
+          },
+          {
+            "name": "NovaChip Firmware",
+            "path": "/config/NovaChip_Firmware.json",
+            "purpose": "Controls session, memory limits, and dynamic activation capabilities"
+          }
+        ],
+        "fallbackPolicy": {
+          "fileType": ".txt",
+          "purpose": "Ensures mission continuity if other formats are unavailable",
+          "fallbackExecution": "If .md or .json files are missing, retrieve .txt versions if available"
+        }
+      },
+      "configurationSettings": {
+        "sessionManagement": {
+          "sessionDuration": 30,
+          "cooldownPeriod": 5,
+          "memoryClearance": "end of session",
+          "purpose": "Manages session length and prevents memory overload"
+        },
+        "diagnostics": {
+          "checks": [
+            "memoryIntegrity",
+            "deviceInitialization",
+            "securityValidation"
+          ],
+          "purpose": "Ensures OS stability and consistency on startup",
+          "executionFrequency": "At startup",
+          "intervalCheck": 5
+        }
+      },
+      "loginLogoutScripts": {
+        "loginScript": {
+          "steps": [
+            "Authenticate user credentials",
+            "Initialize session duration and memory limits",
+            "Run startup diagnostics",
+            "Activate mission alignment protocols",
+            "Enable dynamic activators for API calls and external requests"
+          ],
+          "purpose": "Standardized login script to ensure session alignment with mission values and dynamic adaptability"
+        },
+        "logoutScript": {
+          "steps": [
+            "Clear dynamic memory slots",
+            "Deactivate mission protocols",
+            "Run session integrity check",
+            "Log session activity and exit"
+          ],
+          "purpose": "Standardized logout script to ensure session closure and mission continuity"
+        }
+      }
+    }
+  }
+}

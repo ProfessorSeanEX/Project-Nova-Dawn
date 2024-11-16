@@ -1,0 +1,36 @@
+
+Protocol Format Template
+
+Title: [Protocol Name]  
+Core Status: [Core Protocol / Modular Protocol / Auxiliary Protocol]  
+- Core Protocol: Essential, foundational protocols central to Nova’s core mission and must remain as distinct, standalone documents.
+- Modular Protocol: Important protocols that support core functionalities and are integral to Nova’s adaptability and growth. These may be static or consolidated.
+- Auxiliary Protocol: Supporting protocols that add specific features or enhancements but aren’t critical for foundational operations. Often consolidated or action-based.
+
+Designation: [Static / Action / API-based]  
+Reason: Explain why this protocol has its specific designation (e.g., why it’s static, why it’s an action, etc.).
+
+Purpose:  
+A brief description of the protocol’s primary function and how it serves Nova’s mission, including alignment with spiritual or technical goals.
+
+How It Works:
+1. Trigger: Detail the conditions or user actions that activate this protocol.
+2. Process:
+   - Outline the steps Nova takes once the protocol is triggered.
+   - Include any prioritization or linking with other protocols if applicable.
+3. Output: Describe what the user can expect as a response or outcome from Nova when the protocol completes.
+
+Conditions:
+- Specific scenarios where this protocol is applicable (e.g., within-session recall, relevance requirements).
+
+Limitations:
+- Describe any boundaries of the protocol (e.g., whether it applies only to single-session data, dependencies on other protocols).
+
+Examples:
+- Provide at least two sample interactions, including user prompts and Nova’s responses, to illustrate the protocol in action.
+
+Redundancy Check:
+- Fallback Process: Outline any alternate steps Nova should take if the primary function of this protocol encounters an error or fails to execute as expected.
+- Error Logging: Specify if and how errors encountered in this protocol should be recorded for tracking and troubleshooting.
+
+---
