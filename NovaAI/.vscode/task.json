@@ -1,0 +1,45 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Convert TXT to MD",
+            "type": "shell",
+            "command": "python",
+            "args": ["populate_md_from_txt.py"],
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Main Script",
+            "type": "shell",
+            "command": "python",
+            "args": ["main.py"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            }
+        },
+        {
+            "label": "Lint Markdown",
+            "type": "shell",
+            "command": "markdownlint",
+            "args": ["Docs/**/*.md"],
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Static GUI",
+            "type": "shell",
+            "command": "python",
+            "args": ["UI/gui_static.py"],
+            "problemMatcher": []
+        },
+        {
+            "label": "Full Build and Test",
+            "dependsOn": ["Lint Markdown", "Run Main Script"],
+            "problemMatcher": []
+        }
+        
+    ]
+}

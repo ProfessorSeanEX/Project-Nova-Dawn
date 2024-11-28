@@ -540,7 +540,6 @@ As you read Genesis, ask yourself:
 - **Reflection**: How does God’s Word bring light into the darkness of your circumstances?  
 - **Gamified Prompt**: Identify one “dark” situation (fear, doubt, confusion) in your life. Write a prayer asking God to speak light into it.
 
-
 <a id="genesis-1-4"></a>
 
 ### 4. "God saw that the light was good, and he separated the light from the darkness."
@@ -554,7 +553,6 @@ As you read Genesis, ask yourself:
 - **Pathway Connection**: [Goodness Pathway](#pathway-goodness), [Light Pathway](#pathway-light)  
 - **Reflection**: Where do you see God’s goodness in your life today? How does His ability to separate light from darkness reflect His character?  
 - **Gamified Prompt**: Identify one area in your life where you need to embrace God's goodness. Write down an action step to separate from anything holding you in "darkness."
-
 
 <a id="genesis-1-5"></a>
 
@@ -591,7 +589,8 @@ As you read Genesis, ask yourself:
 
 ### 6. "And God said, 'Let there be a vault between the waters to separate water from water.'"
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Separation](#theme-separation), [Creation](#theme-creation)  
 - **Cross-references**:  
   - [Job 37:18](#job-37-18): "Can you join him in spreading out the skies, hard as a mirror of cast bronze?"  
@@ -604,7 +603,8 @@ As you read Genesis, ask yourself:
 
 ### 7. "So God made the vault and separated the water under the vault from the water above it. And it was so."
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Obedience](#theme-obedience), [God's Authority](#theme-authority)  
 - **Cross-references**:  
   - [Psalm 104:2](#psalm-104-2): "The Lord wraps himself in light as with a garment; he stretches out the heavens like a tent..."  
@@ -617,7 +617,8 @@ As you read Genesis, ask yourself:
 
 ### 8. "God called the vault 'sky.' And there was evening, and there was morning—the second day."
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Naming](#theme-naming), [Order](#theme-order)  
 - **Cross-references**:  
   - [Genesis 2:19](#genesis-2-19): "Now the Lord God had formed out of the ground all the wild animals... and he brought them to the man to see what he would name them..."  
@@ -644,7 +645,8 @@ As you read Genesis, ask yourself:
 
 ### 9. "And God said, 'Let the water under the sky be gathered to one place, and let dry ground appear.' And it was so."
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Creation](#theme-creation), [Power](#theme-power)  
 - **Cross-references**:  
   - [Job 38:8-11](#job-38-8): "Who shut up the sea behind doors when it burst forth from the womb...?"  
@@ -657,7 +659,8 @@ As you read Genesis, ask yourself:
 
 ### 10. "God called the dry ground 'land,' and the gathered waters he called 'seas.' And God saw that it was good."
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Goodness](#theme-goodness), [Naming](#theme-naming)  
 - **Cross-references**:  
   - [Isaiah 45:18](#isaiah-45-18): "He did not create it to be empty, but formed it to be inhabited."  
@@ -670,7 +673,8 @@ As you read Genesis, ask yourself:
 
 ### 11. "Then God said, 'Let the land produce vegetation: seed-bearing plants and trees on the land that bear fruit with seed in it, according to their various kinds.' And it was so."
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Provision](#theme-provision), [Life](#theme-life)  
 - **Cross-references**:  
   - [Matthew 6:30](#matthew-6-30): "If that is how God clothes the grass of the field..."  
@@ -683,7 +687,8 @@ As you read Genesis, ask yourself:
 
 ### 12. "The land produced vegetation: plants bearing seed according to their kinds and trees bearing fruit with seed in it, according to their kinds. And God saw that it was good."
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Fruitfulness](#theme-fruitfulness), [Reproduction](#theme-reproduction)  
 - **Cross-references**:  
   - [John 15:5](#john-15-5): "If you remain in me and I in you, you will bear much fruit..."  
@@ -696,7 +701,8 @@ As you read Genesis, ask yourself:
 
 ### 13. "And there was evening, and there was morning—the third day."
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Time](#theme-time), [Order](#theme-order)  
 - **Cross-references**:  
   - [Ecclesiastes 3:1](#ecclesiastes-3-1): "There is a time for everything, and a season for every activity under the heavens."  
@@ -721,7 +727,8 @@ As you read Genesis, ask yourself:
 
 ### 14. "And God said, 'Let there be lights in the vault of the sky to separate the day from the night, and let them serve as signs to mark sacred times, and days and years,'"
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Time](#theme-time), [Light](#theme-light)  
 - **Cross-references**:  
   - [Psalm 104:19](#psalm-104-19): "He made the moon to mark the seasons, and the sun knows when to go down."  
@@ -734,7 +741,8 @@ As you read Genesis, ask yourself:
 
 ### 15. "'and let them be lights in the vault of the sky to give light on the earth.' And it was so."
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Provision](#theme-provision), [Light](#theme-light)  
 - **Cross-references**:  
   - [John 8:12](#john-8-12): "I am the light of the world. Whoever follows me will never walk in darkness..."  
@@ -747,7 +755,8 @@ As you read Genesis, ask yourself:
 
 ### 16. "God made two great lights—the greater light to govern the day and the lesser light to govern the night. He also made the stars."
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Authority](#theme-authority), [Beauty](#theme-beauty)  
 - **Cross-references**:  
   - [Psalm 19:1](#psalm-19-1): "The heavens declare the glory of God; the skies proclaim the work of his hands."  
@@ -760,7 +769,8 @@ As you read Genesis, ask yourself:
 
 ### 17. "God set them in the vault of the sky to give light on the earth,"
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Order](#theme-order), [Light](#theme-light)  
 - **Cross-references**:  
   - [Genesis 8:22](#genesis-8-22): "As long as the earth endures, seedtime and harvest, cold and heat, summer and winter, day and night will never cease."  
@@ -773,7 +783,8 @@ As you read Genesis, ask yourself:
 
 ### 18. "to govern the day and the night, and to separate light from darkness. And God saw that it was good."
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Goodness](#theme-goodness), [Authority](#theme-authority)  
 - **Cross-references**:  
   - [Isaiah 60:19-20](#isaiah-60-19): "The sun will no more be your light by day, nor will the brightness of the moon shine on you, for the LORD will be your everlasting light..."  
@@ -786,7 +797,8 @@ As you read Genesis, ask yourself:
 
 ### 19. "And there was evening, and there was morning—the fourth day."
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Time](#theme-time), [Order](#theme-order)  
 - **Cross-references**:  
   - [Ecclesiastes 3:1](#ecclesiastes-3-1): "There is a time for everything, and a season for every activity under the heavens."  
@@ -816,7 +828,8 @@ As you read Genesis, ask yourself:
 
 ### 20. "And God said, 'Let the water teem with living creatures, and let birds fly above the earth across the vault of the sky.'"
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Life](#theme-life), [Multiplication](#theme-fruitfulness)  
 - **Cross-references**:  
   - [Psalm 104:25-26](#psalm-104-25): "There is the sea, vast and spacious, teeming with creatures beyond number..."  
@@ -829,7 +842,8 @@ As you read Genesis, ask yourself:
 
 ### 21. "So God created the great creatures of the sea and every living thing with which the water teems and that moves about in it, according to their kinds, and every winged bird according to its kind. And God saw that it was good."
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Diversity](#theme-creation), [Goodness](#theme-goodness)  
 - **Cross-references**:  
   - [Psalm 148:7-10](#psalm-148-7): "Praise the LORD from the earth, you great sea creatures and all ocean depths..."  
@@ -842,7 +856,8 @@ As you read Genesis, ask yourself:
 
 ### 22. "God blessed them and said, 'Be fruitful and increase in number and fill the water in the seas, and let the birds increase on the earth.'"
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Blessing](#theme-blessing), [Multiplication](#theme-fruitfulness)  
 - **Cross-references**:  
   - [Genesis 9:1](#genesis-9-1): "Be fruitful and increase in number and fill the earth."  
@@ -855,7 +870,8 @@ As you read Genesis, ask yourself:
 
 ### 23. "And there was evening, and there was morning—the fifth day."
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Time](#theme-time), [Order](#theme-order)  
 - **Cross-references**:  
   - [Ecclesiastes 3:11](#ecclesiastes-3-11): "He has made everything beautiful in its time..."  
@@ -883,7 +899,8 @@ As you read Genesis, ask yourself:
 
 ### 24. "And God said, 'Let the land produce living creatures according to their kinds: the livestock, the creatures that move along the ground, and the wild animals, each according to its kind.' And it was so."
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Life](#theme-life), [Diversity](#theme-creation)  
 - **Cross-references**:  
   - [Job 12:7-10](#job-12-7): "Ask the animals, and they will teach you, or the birds in the sky, and they will tell you..."  
@@ -896,7 +913,8 @@ As you read Genesis, ask yourself:
 
 ### 25. "God made the wild animals according to their kinds, the livestock according to their kinds, and all the creatures that move along the ground according to their kinds. And God saw that it was good."
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Goodness](#theme-goodness), [Provision](#theme-provision)  
 - **Cross-references**:  
   - [Psalm 145:15-16](#psalm-145-15): "The eyes of all look to you, and you give them their food at the proper time."  
@@ -909,7 +927,8 @@ As you read Genesis, ask yourself:
 
 ### 26. "Then God said, 'Let us make mankind in our image, in our likeness, so that they may rule over the fish in the sea and the birds in the sky, over the livestock and all the wild animals, and over all the creatures that move along the ground.'"
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Image of God](#theme-image-of-god), [Dominion](#theme-sovereignty)  
 - **Cross-references**:  
   - [Psalm 8:5-6](#psalm-8-5): "You have made them a little lower than the angels and crowned them with glory and honor. You made them rulers over the works of your hands..."  
@@ -922,7 +941,8 @@ As you read Genesis, ask yourself:
 
 ### 27. "So God created mankind in his own image, in the image of God he created them; male and female he created them."
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Identity](#theme-identity), [Creation](#theme-creation)  
 - **Cross-references**:  
   - [Genesis 5:1-2](#genesis-5-1): "When God created mankind, he made them in the likeness of God. He created them male and female and blessed them."  
@@ -935,7 +955,8 @@ As you read Genesis, ask yourself:
 
 ### 28. "God blessed them and said to them, 'Be fruitful and increase in number; fill the earth and subdue it. Rule over the fish in the sea and the birds in the sky and over every living creature that moves on the ground.'"
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Blessing](#theme-blessing), [Stewardship](#theme-stewardship)  
 - **Cross-references**:  
   - [Genesis 9:7](#genesis-9-7): "As for you, be fruitful and increase in number; multiply on the earth and increase upon it."  
@@ -948,7 +969,8 @@ As you read Genesis, ask yourself:
 
 ### 29. "Then God said, 'I give you every seed-bearing plant on the face of the whole earth and every tree that has fruit with seed in it. They will be yours for food.'"
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Provision](#theme-provision), [Abundance](#theme-abundance)  
 - **Cross-references**:  
   - [Psalm 145:15-16](#psalm-145-15): "The eyes of all look to you, and you give them their food at the proper time."  
@@ -961,7 +983,8 @@ As you read Genesis, ask yourself:
 
 ### 30. "And to all the beasts of the earth and all the birds in the sky and all the creatures that move along the ground—everything that has the breath of life in it—I give every green plant for food.' And it was so."
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Provision](#theme-provision), [Sustenance](#theme-life)  
 - **Cross-references**:  
   - [Psalm 36:6-7](#psalm-36-6): "You, LORD, preserve both people and animals. How priceless is your unfailing love, O God!"  
@@ -974,7 +997,8 @@ As you read Genesis, ask yourself:
 
 ### 31. "God saw all that he had made, and it was very good. And there was evening, and there was morning—the sixth day."
 
-#### Verse Reference Context:
+#### Verse Reference Context
+
 - **Themes**: [Completion](#theme-completion), [Goodness](#theme-goodness)  
 - **Cross-references**:  
   - [Deuteronomy 32:4](#deuteronomy-32-4): "He is the Rock, his works are perfect, and all his ways are just."  
@@ -1020,41 +1044,41 @@ The glossary serves as a relational tool, offering definitions of key biblical t
 
 ### Faith and Trust
 
-| **Term**       | **Definition**                                  | **References**                                  |
-| -------------- | ----------------------------------------------- | ----------------------------------------------- |
-| **Faith**      | Trust and confidence in God’s promises.         | [Genesis 15:6](#genesis-15-6), [Hebrews 11:1](#hebrews-11-1), [Matthew 8:10](#matthew-8-10) |
-| **Hope**       | Confident expectation of God’s promises.        | [Romans 15:13](#romans-15-13), [Isaiah 40:31](#isaiah-40-31) |
-| **Righteousness** | Being in right standing with God.            | [Romans 4:5](#romans-4-5), [2 Corinthians 5:21](#2-corinthians-5-21) |
+| **Term**          | **Definition**                           | **References**                                                                              |
+| ----------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------- |
+| **Faith**         | Trust and confidence in God’s promises.  | [Genesis 15:6](#genesis-15-6), [Hebrews 11:1](#hebrews-11-1), [Matthew 8:10](#matthew-8-10) |
+| **Hope**          | Confident expectation of God’s promises. | [Romans 15:13](#romans-15-13), [Isaiah 40:31](#isaiah-40-31)                                |
+| **Righteousness** | Being in right standing with God.        | [Romans 4:5](#romans-4-5), [2 Corinthians 5:21](#2-corinthians-5-21)                        |
 
 ---
 
 ### Salvation and Forgiveness
 
-| **Term**       | **Definition**                                  | **References**                                  |
-| -------------- | ----------------------------------------------- | ----------------------------------------------- |
-| **Grace**      | Unmerited favor from God.                       | [Ephesians 2:8-9](#ephesians-2-8-9), [Titus 2:11](#titus-2-11) |
-| **Redemption** | God’s act of saving humanity through Christ.    | [Exodus 6:6](#exodus-6-6), [Isaiah 53:5](#isaiah-53-5), [John 19:30](#john-19-30) |
-| **Forgiveness**| Letting go of offenses as God forgives us.       | [Genesis 50:20](#genesis-50-20), [Matthew 6:14](#matthew-6-14), [Luke 15:20](#luke-15-20) |
-| **Repentance** | Turning away from sin and toward God.           | [Acts 3:19](#acts-3-19), [Luke 5:32](#luke-5-32) |
+| **Term**        | **Definition**                               | **References**                                                                            |
+| --------------- | -------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| **Grace**       | Unmerited favor from God.                    | [Ephesians 2:8-9](#ephesians-2-8-9), [Titus 2:11](#titus-2-11)                            |
+| **Redemption**  | God’s act of saving humanity through Christ. | [Exodus 6:6](#exodus-6-6), [Isaiah 53:5](#isaiah-53-5), [John 19:30](#john-19-30)         |
+| **Forgiveness** | Letting go of offenses as God forgives us.   | [Genesis 50:20](#genesis-50-20), [Matthew 6:14](#matthew-6-14), [Luke 15:20](#luke-15-20) |
+| **Repentance**  | Turning away from sin and toward God.        | [Acts 3:19](#acts-3-19), [Luke 5:32](#luke-5-32)                                          |
 
 ---
 
 ### God’s Character
 
-| **Term**       | **Definition**                                  | **References**                                  |
-| -------------- | ----------------------------------------------- | ----------------------------------------------- |
-| **Mercy**      | God’s compassionate forgiveness.                | [Psalm 103:8](#psalm-103-8), [Matthew 5:7](#matthew-5-7) |
-| **Sovereignty**| God’s supreme authority over creation.          | [Genesis 1:1](#genesis-1-1), [Romans 9:21](#romans-9-21) |
-| **Stewardship**| Responsible care of God’s gifts.                | [Genesis 2:15](#genesis-2-15), [Matthew 25:14-30](#matthew-25-14-30) |
+| **Term**        | **Definition**                         | **References**                                                       |
+| --------------- | -------------------------------------- | -------------------------------------------------------------------- |
+| **Mercy**       | God’s compassionate forgiveness.       | [Psalm 103:8](#psalm-103-8), [Matthew 5:7](#matthew-5-7)             |
+| **Sovereignty** | God’s supreme authority over creation. | [Genesis 1:1](#genesis-1-1), [Romans 9:21](#romans-9-21)             |
+| **Stewardship** | Responsible care of God’s gifts.       | [Genesis 2:15](#genesis-2-15), [Matthew 25:14-30](#matthew-25-14-30) |
 
 ---
 
 ### Relational Symbols
 
-| **Term**       | **Definition**                                  | **References**                                  |
-| -------------- | ----------------------------------------------- | ----------------------------------------------- |
-| **Light**      | God’s truth, presence, and guidance.            | [Genesis 1:3](#genesis-1-3), [John 8:12](#john-8-12) |
-| **Darkness**   | Symbol of sin or separation from God.           | [John 1:5](#john-1-5), [Ephesians 5:8](#ephesians-5-8) |
+| **Term**     | **Definition**                        | **References**                                         |
+| ------------ | ------------------------------------- | ------------------------------------------------------ |
+| **Light**    | God’s truth, presence, and guidance.  | [Genesis 1:3](#genesis-1-3), [John 8:12](#john-8-12)   |
+| **Darkness** | Symbol of sin or separation from God. | [John 1:5](#john-1-5), [Ephesians 5:8](#ephesians-5-8) |
 
 ---
 
@@ -1072,15 +1096,15 @@ The **Maps and Timelines** section provides a visual and conceptual overview of 
 
 The creation timeline highlights the sequential events of Genesis 1, showing God’s intentional design and creative acts day by day:
 
-| **Day**  | **Creation Event**                                                                        |
-|----------|------------------------------------------------------------------------------------------|
-| **Day 1** | God separates light from darkness, calling them Day and Night.                         |
-| **Day 2** | God creates the sky to separate the waters above from the waters below.                |
-| **Day 3** | God gathers waters to create dry land and vegetation.                                  |
-| **Day 4** | God creates the sun, moon, and stars to govern time and seasons.                       |
-| **Day 5** | God creates sea creatures and birds.                                                   |
-| **Day 6** | God creates land animals and mankind in His image, giving them dominion.               |
-| **Day 7** | God rests, blessing the seventh day as holy.                                           |
+| **Day**   | **Creation Event**                                                       |
+| --------- | ------------------------------------------------------------------------ |
+| **Day 1** | God separates light from darkness, calling them Day and Night.           |
+| **Day 2** | God creates the sky to separate the waters above from the waters below.  |
+| **Day 3** | God gathers waters to create dry land and vegetation.                    |
+| **Day 4** | God creates the sun, moon, and stars to govern time and seasons.         |
+| **Day 5** | God creates sea creatures and birds.                                     |
+| **Day 6** | God creates land animals and mankind in His image, giving them dominion. |
+| **Day 7** | God rests, blessing the seventh day as holy.                             |
 
 ---
 

@@ -1,0 +1,6 @@
+﻿digraph NovaAIMindMap {
+"FaithNet" -> "CoreModules";
+"Main.py" -> "identity_module.py";
+"Main.py" -> "CoreModules";
+"CoreModules" -> "OmniCode";
+}

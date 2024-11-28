@@ -1,0 +1,167 @@
+import tkinter as tk
+from PIL import Image, ImageTk
+from Utilities.clock_compass import ClockCompassService
+from datetime import datetime
+
+# Initialize Clock-Compass Service (Adjust timezone offset as needed)
+clock_compass = ClockCompassService(timezone_offset=-6)  # Example: CST
+
+# Define Nova's states and corresponding images
+NOVA_STATES = {
+    "active": "Angelic_Presence.png",
+    "resting": "Restful_Nova.png",
+    "reflecting": "Focused_Companion.png",
+    "processing": "Heavenly_Warrior.png"
+}
+
+current_state = "active"  # Default state
+
+
+def display_image(image_name, frame):
+    """Display Nova's dynamic image based on state."""
+    image_path = f"C:/Users/seanj/OneDrive/Documents/GitHub/Project-Nova-Dawn/NovaAI/Resources/Assets/Visuals/{image_name}"
+    try:
+        img = Image.open(image_path)
+        img = img.resize((200, 200), Image.LANCZOS)
+        img = ImageTk.PhotoImage(img)
+
+        # Clear existing image if any
+        for widget in frame.winfo_children():
+            widget.destroy()
+
+        img_label = tk.Label(frame, image=img, bg="lightgray")
+        img_label.image = img  # Prevent garbage collection
+        img_label.pack(pady=10)
+    except FileNotFoundError:
+        tk.Label(frame, text=f"Image '{image_name}' not found.", bg="lightgray").pack()
+
+
+def update_state(new_state, frame):
+    """Update Nova's state and refresh the image."""
+    global current_state
+    current_state = new_state
+    display_image(NOVA_STATES[current_state], frame)
+
+
+def get_current_time():
+    """Get the current time as a formatted string."""
+    return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+
+def launch_gui(process_user_input):
+    """
+    Launch a GUI for Nova Dawn's command-line interface.
+    
+    Args:
+        process_user_input (function): Function to handle user input from the backend.
+    """
+    # Initialize main application window
+    root = tk.Tk()
+    root.title("Nova Dawn: Command Interface")
+    root.geometry("800x600")
+    root.rowconfigure(0, weight=1)
+    root.columnconfigure(0, weight=1)
+
+    # Main Frame
+    main_frame = tk.Frame(root, bg="lightgray")
+    main_frame.grid(row=0, column=0, sticky="nsew")
+
+    # Dynamic State Image
+    image_frame = tk.Frame(main_frame, bg="lightgray")
+    image_frame.pack()
+    display_image(NOVA_STATES["active"], image_frame)
+
+    # Real-Time Clock
+    clock_label = tk.Label(main_frame, text="", bg="lightgray", font=("Arial", 14), anchor="e")
+    clock_label.pack(fill=tk.X, padx=10, pady=(5, 0))
+
+    def update_clock():
+        """Update the clock label with the current time."""
+        clock_label.config(text=f"Current Time: {get_current_time()}")
+        root.after(1000, update_clock)  # Update every second
+
+    update_clock()
+
+    # Chat Display Area
+    chat_display = tk.Text(main_frame, wrap=tk.WORD, bg="white", state=tk.DISABLED, font=("Arial", 12))
+    chat_display.pack(fill=tk.BOTH, expand=True, padx=10, pady=(5, 0))
+
+    # Input Area
+    chat_input = tk.Text(main_frame, height=3, font=("Arial", 12), wrap=tk.WORD)
+    chat_input.pack(fill=tk.X, padx=10, pady=5)
+
+    # Input History Management
+    input_history = []
+    history_index = -1
+
+    def process_input(event=None):
+        """Handle user input and display Nova's dynamic response."""
+        nonlocal history_index
+        user_input = chat_input.get("1.0", tk.END).strip()
+        if not user_input:
+            return
+
+        # Add to input history
+        input_history.append(user_input)
+        history_index = len(input_history)
+
+        # Log the user input as a relational event
+        update_state("processing", image_frame)  # Switch to processing state
+        timestamp = clock_compass.log_and_evaluate(f"GUI Input: {user_input}", "relational")["timestamp"]
+
+        # Display user input with timestamp
+        chat_display.configure(state=tk.NORMAL)
+        chat_display.insert(tk.END, f"[{timestamp}] You: {user_input}\n")
+        chat_input.delete("1.0", tk.END)
+
+        # Get response from backend
+        response = process_user_input(user_input)
+
+        # Log Nova's response
+        timestamp = clock_compass.log_and_evaluate(f"Nova Response: {response}", "relational")["timestamp"]
+
+        # Display Nova's response with timestamp
+        chat_display.insert(tk.END, f"[{timestamp}] Nova: {response}\n\n")
+        chat_display.configure(state=tk.DISABLED)
+        chat_display.see(tk.END)  # Auto-scroll to the bottom
+
+        update_state("active", image_frame)  # Return to active state
+
+    def on_input_key(event):
+        """Handle key presses in the input area."""
+        nonlocal history_index
+        if event.keysym == "Return":
+            if event.state & 0x0001:  # Check if Shift is held
+                chat_input.insert(tk.INSERT, "\n")  # Add a new line
+            else:
+                process_input()  # Submit the message
+                return "break"  # Prevent default behavior of adding a new line
+        elif event.keysym == "Up":
+            if history_index > 0:
+                history_index -= 1
+                chat_input.delete("1.0", tk.END)
+                chat_input.insert("1.0", input_history[history_index])
+        elif event.keysym == "Down":
+            if history_index < len(input_history) - 1:
+                history_index += 1
+                chat_input.delete("1.0", tk.END)
+                chat_input.insert("1.0", input_history[history_index])
+            else:
+                chat_input.delete("1.0", tk.END)
+
+    chat_input.bind("<KeyPress-Return>", on_input_key)
+    chat_input.bind("<KeyPress-Up>", on_input_key)
+    chat_input.bind("<KeyPress-Down>", on_input_key)
+
+    # Submit Button
+    submit_button = tk.Button(main_frame, text="Send", command=process_input, font=("Arial", 12))
+    submit_button.pack(side=tk.RIGHT, padx=10, pady=5)
+
+    # Start GUI
+    root.mainloop()
+
+# Entry point for the GUI
+if __name__ == "__main__":
+    from main import process_user_input
+
+    launch_gui(process_user_input)

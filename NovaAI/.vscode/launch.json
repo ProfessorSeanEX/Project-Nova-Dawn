@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Python: Main Script",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Docs Module",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/NovaAI/docs_module.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: GUI Debug",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/UI/gui_static.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: FaithNet",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/FaithNet.py",
+            "console": "integratedTerminal"
+        }
+        
+    ]
+}

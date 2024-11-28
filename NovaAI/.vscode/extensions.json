@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "ms-python.python",             // Python support
+        "yzhang.markdown-all-in-one",   // Enhanced Markdown tooling
+        "davidanson.vscode-markdownlint", // Linting for Markdown files
+        "eamodio.gitlens",              // Advanced Git tools
+        "mhutchie.git-graph",           // Visual Git graph for version control
+        "PKief.material-icon-theme",     // File icons for better navigation
+        "tht13.python",                // Python GUI-focused extensions
+        "ritwickdey.liveserver",       // Live Server for HTML previews (Web UI)
+        "esbenp.prettier-vscode",       // Prettier for consistent formatting
+        "mohsen1.prettify-json",       // JSON beautifier
+        "streetsidesoftware.code-spell-checker" // Advanced spell-checker
+    ]
+}

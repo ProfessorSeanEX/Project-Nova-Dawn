@@ -1,0 +1,43 @@
+{
+    "cSpell.words": [
+        "FaithNet",
+        "Flamekeeper",
+        "GUI",
+        "journaling",
+        "kairos",
+        "Kairos",
+        "Lightbringer",
+        "lightgray",
+        "NovaAI",
+        "OmniCode",
+        "padx",
+        "pady",
+        "personhood",
+        "Unlockable",
+        "Wayfinder",
+        "yaml"
+    ],
+    "files.autoSave": "onFocusChange",                 // Automatically save files when focus changes
+    "editor.formatOnSave": true,                      // Format code automatically on save
+    "editor.wordWrap": "on",                          // Enable word wrapping for better Markdown readability
+    "editor.tabSize": 4,                              // Set tab size to 4 spaces for consistency
+    "files.exclude": {                                // Hide unnecessary files in the explorer
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "**/.DS_Store": true
+    },
+    "files.associations": {                           // Associate specific file types
+        "*.md": "markdown",
+        "*.bash": "shellscript",
+        "*.json": "json"
+    },
+    "python.pythonPath": "${workspaceFolder}/venv/bin/python",  // Path to Python virtual environment
+    "markdownlint.config": {                          // Markdown linting rules
+        "line-length": false,                         // Ignore line length for better writing
+        "no-inline-html": false                       // Allow inline HTML in Markdown
+    },
+    "workbench.colorCustomizations": {               // Custom colors for a focused environment
+        "editor.background": "#1e1e2e",
+        "editor.foreground": "#e0e0e0"
+    }
+}
