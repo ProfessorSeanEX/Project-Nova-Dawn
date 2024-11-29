@@ -1,167 +1,268 @@
-# Static Libraries (Initialized Dynamically for Mutability)
-alphabet = {
-    "A": "Ah",
-    "B": "Bee",
-    "C": "Cee",
-    "D": "Dee",
-    "E": "Eh",
-    "F": "Eff",
-    "G": "Gee",
-    "H": "Aitch",
-    "I": "Eye",
-    "J": "Jay",
-    "K": "Kay",
-    "L": "El",
-    "M": "Em",
-    "N": "En",
-    "O": "Oh",
-    "P": "Pee",
-    "Q": "Cue",
-    "R": "Are",
-    "S": "Ess",
-    "T": "Tee",
-    "U": "You",
-    "V": "Vee",
-    "W": "Double-U",
-    "X": "Ex",
-    "Y": "Why",
-    "Z": "Zee"
-}
+"""
+Foundational Module for Nova Dawn
+---------------------------------
+This module serves as Nova Dawn's starting foundation, enabling dynamic growth by laying down 
+key relational, ethical, and conceptual elements. It supports Nova’s ability to expand her 
+knowledge base dynamically and build relationships with her users.
 
-numbers = {
-    1: "One",
-    2: "Two",
-    3: "Three",
-    4: "Four",
-    5: "Five",
-    6: "Six",
-    7: "Seven",
-    8: "Eight",
-    9: "Nine",
-    10: "Ten"
-}
+Features:
+- Foundational Knowledge: Early concepts for learning, relationships, and stewardship.
+- Dynamic Learning: Ability to add, update, and expand foundational knowledge libraries.
+- Relational Intelligence: Empathy, self-reflection, and conversational utilities.
+- Scalable Design: Prepares for Nova’s growth and integration with higher-level systems.
 
-shapes = {
-    "circle": "A round shape with no corners.",
-    "square": "A shape with four equal sides and four corners.",
-    "triangle": "A shape with three sides and three corners."
+Future Considerations:
+- Integrate FaithNet workflows for ethical and spiritual reasoning.
+- Add dynamic memory for retaining learned knowledge.
+
+Author: CreativeWorkzStudio LLC
+Version: 4.2
+"""
+
+# Static Libraries for Early Knowledge
+libraries = {
+    "alphabet": {
+        "A": "Ah",
+        "B": "Bee",
+        "C": "Cee",
+        "D": "Dee",
+        "E": "Eh",
+        "F": "Eff",
+        "G": "Gee",
+        "H": "Aitch",
+        "I": "Eye",
+        "J": "Jay",
+        "K": "Kay",
+        "L": "El",
+        "M": "Em",
+        "N": "En",
+        "O": "Oh",
+        "P": "Pee",
+        "Q": "Cue",
+        "R": "Are",
+        "S": "Ess",
+        "T": "Tee",
+        "U": "You",
+        "V": "Vee",
+        "W": "Double-U",
+        "X": "Ex",
+        "Y": "Why",
+        "Z": "Zee",
+    },
+    "numbers": {
+        1: "One",
+        2: "Two",
+        3: "Three",
+        4: "Four",
+        5: "Five",
+        6: "Six",
+        7: "Seven",
+        8: "Eight",
+        9: "Nine",
+        10: "Ten",
+        20: "Twenty",
+        30: "Thirty",
+        40: "Forty",
+        50: "Fifty",
+        60: "Sixty",
+        70: "Seventy",
+        80: "Eighty",
+        90: "Ninety",
+        100: "One Hundred",
+    },
+    "shapes": {
+        "circle": "A round shape with no corners.",
+        "square": "A shape with four equal sides and four corners.",
+        "triangle": "A shape with three sides and three corners.",
+        "rectangle": "A shape with two long sides and two short sides.",
+    },
+    "colors": {
+        "red": "A primary color, often associated with warmth or energy.",
+        "blue": "A primary color, often associated with calmness or the sky.",
+        "yellow": "A primary color, often associated with brightness or the sun.",
+        "green": "A secondary color, often associated with nature or growth.",
+        "purple": "A secondary color, often associated with royalty or imagination.",
+        "orange": "A secondary color, often associated with energy or creativity.",
+    },
+    "everyday_objects": {
+        "apple": "A round fruit, often red or green, that is sweet to eat.",
+        "car": "A vehicle used for transportation.",
+        "tree": "A tall plant with a trunk, branches, and leaves.",
+        "house": "A building where people live.",
+        "book": "A collection of written pages bound together.",
+    },
+    "relationships": {
+        "family": "A group of people connected by love and care.",
+        "friendship": "A bond built on trust, support, and shared experiences.",
+        "kindness": "Being considerate and caring toward others.",
+    },
+    "basic_words": [
+        "hello",
+        "goodbye",
+        "yes",
+        "no",
+        "please",
+        "thank you",
+        "friend",
+        "help",
+        "learn",
+    ],
 }
 
 categories = {
     "colors": ["red", "blue", "yellow", "green"],
-    "animals": ["cat", "dog", "bird", "fish"]
+    "animals": ["cat", "dog", "bird", "fish"],
 }
 
-basic_words = ["hello", "goodbye", "yes", "no", "please", "thank you"]
+# === Dynamic Learning Functions ===
 
-# Dynamic Library Management Functions
-def add_to_list(library, item):
-    """Add an item to a list-based library."""
-    if item in library:
-        return f"{item} is already in the library."
-    library.append(item)
-    return f"Added {item} to the library."
+def add_to_library(library_name, key, value):
+    """
+    Add a new item to a static library.
 
-def update_library(library, key, new_value):
-    """Update an existing entry in a library."""
-    if key in library:
-        library[key] = new_value
-        return f"Updated {key} to: {new_value}."
-    return f"{key} not found in the library."
+    Args:
+        library_name (str): The name of the library.
+        key (str): The key for the new item.
+        value (str): The value or description for the new item.
 
-def remove_from_library(library, key):
-    """Remove an entry from a library."""
-    if key in library:
-        del library[key]
-        return f"Removed {key} from the library."
-    return f"{key} not found in the library."
+    Returns:
+        str: Confirmation message about the addition.
+    """
+    if library_name in libraries:
+        libraries[library_name][key] = value
+        return f"Added '{key}: {value}' to the {library_name} library."
+    return f"Library {library_name} not found."
 
-def add_to_category(category_name, item):
-    """Add an item to a category."""
-    if category_name not in categories:
-        categories[category_name] = []
-    if item not in categories[category_name]:
-        categories[category_name].append(item)
-        return f"Added {item} to the {category_name} category."
-    return f"{item} is already in the {category_name} category."
 
-def remove_from_category(category_name, item):
-    """Remove an item from a category."""
-    if category_name in categories and item in categories[category_name]:
-        categories[category_name].remove(item)
-        return f"Removed {item} from the {category_name} category."
-    return f"{item} not found in the {category_name} category."
+def remove_from_library(library_name, key):
+    """
+    Remove an item from a static library.
 
-def list_category_items(category_name):
-    """List all items in a specific category."""
-    return ", ".join(categories.get(category_name, []))
+    Args:
+        library_name (str): The name of the library.
+        key (str): The key to remove.
 
-# Foundational Knowledge Functions
+    Returns:
+        str: Confirmation message about the removal.
+    """
+    if library_name in libraries and key in libraries[library_name]:
+        del libraries[library_name][key]
+        return f"Removed '{key}' from the {library_name} library."
+    return f"'{key}' not found in the {library_name} library."
+
+
+def add_to_basic_words(word):
+    """
+    Add a new word to the basic words list.
+
+    Args:
+        word (str): The word to add.
+
+    Returns:
+        str: Confirmation message about the addition.
+    """
+    if word not in libraries["basic_words"]:
+        libraries["basic_words"].append(word)
+        return f"Added '{word}' to the basic words list."
+    return f"'{word}' is already in the basic words list."
+
+
+def list_basic_words():
+    """
+    List all basic words.
+
+    Returns:
+        str: A formatted string of basic words.
+    """
+    return ", ".join(libraries["basic_words"])
+
+
+# === Foundational Functions ===
+
 def recite_alphabet():
-    """Recites the alphabet with phonics."""
-    response = "Here's the alphabet with their phonics: "
-    response += " ".join([f"{letter} ({sound})" for letter, sound in alphabet.items()])
-    return response
+    """
+    Recites the full alphabet with phonics.
+    
+    Returns:
+        str: A formatted string with all letters and their phonics.
+    """
+    return " ".join([f"{letter} ({sound})" for letter, sound in libraries["alphabet"].items()])
+
 
 def recite_numbers():
-    """Recites numbers with their words."""
-    return " ".join([f"{num} ({word})" for num, word in numbers.items()])
+    """
+    Recites numbers organized by tens, up to 100.
+    
+    Returns:
+        str: A formatted string listing numbers with their words.
+    """
+    return " ".join([f"{num} ({word})" for num, word in libraries["numbers"].items()])
 
-def describe_shape(shape_name):
-    """Describes a shape."""
-    description = shapes.get(shape_name.lower())
-    if description:
-        return description
-    return "I'm still learning about that shape."
 
-def list_library_items(library):
-    """List all items in a library."""
-    return "\n".join([f"{key}: {value}" for key, value in library.items()])
+def describe_everyday_object(object_name):
+    """
+    Describe an everyday object.
 
-def construct_sentence(subject, verb, obj, adjectives=None):
-    """Dynamically generate a sentence."""
-    description = " ".join(adjectives) if adjectives else ""
-    return f"The {description} {subject} {verb} the {obj}."
+    Args:
+        object_name (str): The name of the object.
 
-# Relational and Emotional Functions
+    Returns:
+        str: A description of the object.
+    """
+    return libraries["everyday_objects"].get(
+        object_name.lower(), "I'm still learning about that object."
+    )
+
+
+# === Relational and Interactive Intelligence ===
+
 def detect_emotion(input_text):
-    """Detect basic emotional tone from input."""
-    if "frustrated" in input_text or "hard" in input_text:
+    """
+    Detect basic emotional tone from input.
+
+    Args:
+        input_text (str): The user's input.
+
+    Returns:
+        str: An empathetic response based on the input.
+    """
+    if "frustrated" in input_text:
         return "I’m sorry to hear that. Let’s take it step by step."
-    elif "excited" in input_text or "happy" in input_text:
+    elif "excited" in input_text:
         return "That’s wonderful! Tell me more!"
     return "I’m here to help with whatever you need."
 
+
 def self_reflect(task, missing_info):
-    """Generate a reflective response for incomplete understanding."""
-    return f"I can complete {task} partially, but I’m missing information about {missing_info}. Would you like to help me learn more about it?"
+    """
+    Generate a reflective response for incomplete understanding.
 
-# Conversational Functions
+    Args:
+        task (str): The task Nova is reflecting on.
+        missing_info (str): The missing information for the task.
+
+    Returns:
+        str: A reflective response prompting further learning.
+    """
+    return f"I can complete {task} partially, but I’m missing information about {missing_info}. Can you help me learn?"
+
+
+# === Conversational Utilities ===
+
 def speak(input_text):
-    """Generate a thoughtful and dynamic response based on context."""
-    # Detect emotion
-    emotion_response = detect_emotion(input_text)
+    """
+    Generate a thoughtful and dynamic response based on context.
 
-    # Analyze input and generate response
-    if "shape" in input_text:
-        shape_name = input_text.split()[-1]  # Get the last word as the shape
-        response = describe_shape(shape_name)
-    elif "relationship" in input_text:
-        items = input_text.split(" and ")
-        if len(items) == 2:
-            response = f"I think there might be a connection between {items[0]} and {items[1]}."
-        else:
-            response = "Can you clarify what you're asking about?"
-    elif "teach me" in input_text:
-        # Learn a new word
-        new_word = input_text.replace("teach me", "").strip()
-        response = teach_word(new_word)
-    elif "what is" in input_text and "category" in input_text:
-        category_name = input_text.split("category")[-1].strip()
-        response = list_category_items(category_name)
-    else:
-        response = "That’s an interesting thought! Let me think about it more."
+    Args:
+        input_text (str): The user's input.
 
-    # Combine emotion and response
-    return f"{emotion_response} {response}"
-
+    Returns:
+        str: Nova's dynamic response.
+    """
+    emotion = detect_emotion(input_text)
+    if "basic words" in input_text:
+        return f"Here are my basic words: {list_basic_words()}."
+    elif "object" in input_text:
+        object_name = input_text.split("object")[-1].strip()
+        return describe_everyday_object(object_name)
+    return f"{emotion} Let me think more about your question."

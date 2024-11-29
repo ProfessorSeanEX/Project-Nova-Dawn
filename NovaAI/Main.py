@@ -2,16 +2,25 @@
 # Author: CreativeWorkzStudio LLC
 # Description: The foundational script for initializing NovaAI's systems.
 
-# Core imports
+# Standard Library Imports
+# Standard Library Imports
 import sys
 import os
-sys.path.append(os.path.dirname(__file__))
-from UI.gui_static import launch_gui
-from identity_module import load_identity, query_identity, store_insight, retrieve_insight
-from Foundations.foundational_module import recite_alphabet, recite_numbers, describe_shape, speak, add_to_list, basic_words
-from Utilities.clock_compass import ClockCompassService  # Import Clock-Compass System
-import json
-from datetime import datetime
+from datetime import datetime  # Ensure this import is present
+
+# Add the parent directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+# Import modules
+from NovaAI import (
+    load_identity,
+    query_identity,
+    reflect_on_identity,
+    relate_sections,
+    log_identity_event
+)
+from Utilities.clock_compass import ClockCompassService
+from MillenniumOS.Core.os_initializer import initialize_millennium_os
 
 # GUI availability
 GUI_AVAILABLE = False
@@ -28,12 +37,6 @@ clock_compass = ClockCompassService(timezone_offset=-6)  # Example: CST
 insights = {}
 
 # Core Functions
-def initialize_millennium_os():
-    """Initialize MillenniumOS for NovaAI."""
-    print("Initializing MillenniumOS...")
-    clock_compass.log_and_evaluate("MillenniumOS Initialization", "neutral")  # Log initialization event
-    return True
-
 def load_bible(version="KJV"):
     """Load Bible content dynamically based on file availability."""
     print(f"Loading {version} Bible...")
@@ -58,86 +61,56 @@ def load_bible(version="KJV"):
         clock_compass.log_and_evaluate(f"Error Decoding {version} Bible: {e}", "neutral")
         return None
 
-def process_user_input(user_input, identity_data, kjv_content, insights, basic_words):
+def process_user_input(user_input, identity_data, insights, kjv_content=None):
     """
     Handle user input and dynamically generate a response.
     
     Args:
         user_input (str): The user's input.
         identity_data (dict): Loaded Identity.md data.
-        kjv_content (str): Loaded KJV Bible content.
         insights (dict): Insights storage.
-        basic_words (list): Dynamic list of known words.
+        kjv_content (str, optional): Loaded Bible content.
 
     Returns:
         str: A dynamically generated response.
     """
     user_input = user_input.lower().strip()
-    clock_compass.log_and_evaluate(f"User Input: {user_input}", "relational")  # Log user input
+    log_identity_event("QUERY", f"Processing user input: {user_input}")
+
+    # Identity Reflection
+    if user_input.startswith("reflect"):
+        context = user_input.replace("reflect", "").strip()
+        response = reflect_on_identity(identity_data, context)
+        log_identity_event("REFLECT", f"Generated reflection for context: {context}")
+        return response
 
     # Identity Queries
     if user_input.startswith("identity"):
         keyword = user_input[9:].strip()
         response = query_identity(identity_data, keyword)
         if response:
-            clock_compass.log_and_evaluate("Identity Query Processed", "relational")
+            log_identity_event("QUERY", f"Identity query processed for keyword: {keyword}")
             return "\n".join(f"From {section}:\n  - {line}" for section, lines in response.items() for line in lines)
         return "I couldn't find anything matching your query in my identity."
 
-    # Scripture Search
-    if user_input.startswith("search"):
-        keyword = user_input[7:].strip()
-        results = [line.strip() for line in kjv_content.splitlines() if keyword.lower() in line.lower()]
-        if results:
-            clock_compass.log_and_evaluate(f"Scripture Search for '{keyword}'", "kairos")
-            return f"Found {len(results)} results:\n" + "\n".join(results[:5])
-        return "No results found for your search."
-
-    # Teach Me (Dynamic Learning)
-    if "teach me" in user_input:
-        try:
-            # Extract the word to learn
-            new_word = user_input.replace("teach me", "").strip()
-            if new_word:
-                # Handle list-based dynamic learning
-                if isinstance(basic_words, list):  # Check if library is list
-                    result = add_to_list(basic_words, new_word)
-                else:
-                    result = add_to_library(basic_words, new_word, f"A newly learned word: {new_word}.")
-                clock_compass.log_and_evaluate(f"Word Taught: {new_word}", "relational")
-                return result
-            else:
-                return "I need a word to learn. Please say something like 'Teach me apple.'"
-        except Exception as e:
-            return f"An error occurred while learning: {e}"
-
-    # Foundational Knowledge Commands
-    if user_input == "recite alphabet":
-        return recite_alphabet()
-    if user_input == "recite numbers":
-        return recite_numbers()
-    if "what is a" in user_input or "describe" in user_input:
-        shape_name = user_input.split()[-1]
-        response = describe_shape(shape_name)
-        clock_compass.log_and_evaluate(f"Shape Described: {shape_name}", "relational")
-        return response
-
-    # Small Talk (Greeting or Check-In)
-    if user_input in ["how are you", "hello", "hi", "nova how are you"]:
-        return "I'm doing well, thank you! How can I help you today?"
+    # Relationship Mapping
+    if user_input == "relationships":
+        relationships = relate_sections(identity_data)
+        log_identity_event("RELATE", "Generated relationships between identity sections.")
+        return "\n".join(f"{key}: {value}" for key, value in relationships.items())
 
     # Default Response
-    clock_compass.log_and_evaluate("Default Response Triggered", "neutral")
-    return speak(user_input)
+    log_identity_event("DEFAULT", "Default response triggered.")
+    return "I’m not sure how to help with that yet, but I’m always learning!"
 
 # Main Application Flow
 if __name__ == "__main__":
     print("=== Nova Dawn: Main Entry Point ===")
-    clock_compass.log_and_evaluate("Session Started", "neutral")  # Log session start
+    clock_compass.log_and_evaluate("Session Started", "neutral")
     start_time = datetime.now()
 
     # Initialize OS
-    if initialize_millennium_os():
+    if initialize_millennium_os(clock_compass):
         print("MillenniumOS initialized successfully.")
 
     # Load Identity Data
@@ -147,16 +120,14 @@ if __name__ == "__main__":
         clock_compass.log_and_evaluate("Identity Load Failed", "neutral")
         exit(1)
 
-    # Load Bibles
-    kjv_content = load_bible("KJV")
-    if not kjv_content:
-        kjv_content = ""
+    # Load Bible Content
+    kjv_content = load_bible("KJV") or ""
 
     # Launch Interface or CLI Interaction
     if GUI_AVAILABLE:
         print("Launching GUI...")
         clock_compass.log_and_evaluate("GUI Launched", "neutral")
-        launch_gui(lambda user_input: process_user_input(user_input, identity_data, kjv_content, insights, basic_words))
+        launch_gui(lambda user_input: process_user_input(user_input, identity_data, insights, kjv_content))
     else:
         print("GUI unavailable. Starting CLI interaction.")
         while True:
@@ -165,11 +136,13 @@ if __name__ == "__main__":
                 print("Nova: Goodbye! Stay blessed!")
                 break
 
-            response = process_user_input(user_input, identity_data, kjv_content, insights)
+            response = process_user_input(user_input, identity_data, insights, kjv_content)
             print(f"Nova: {response}")
 
     end_time = datetime.now()
     clock_compass.log_and_evaluate("Session Ended", "neutral")
     print(f"\nSession ended. Duration: {end_time - start_time}")
+
+
 
 

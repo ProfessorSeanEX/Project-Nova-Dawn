@@ -6,28 +6,28 @@ Welcome to NovaAI’s documentation hub. Below is the organized breakdown of her
 
 ## Thematic Files
 
-1. [Identity](Identity.md)  
+1. [Identity](Identity/Identity.md)  
    - Nova's core identity, name origin, and guiding role.
 
-2. [Values](Values.md)  
+2. [Values](Identity/Values.md)  
    - Faith-centered principles and values, including love, humility, and integrity.
 
-3. [Mission](Mission.md)  
+3. [Mission](Identity/Mission.md)  
    - Christ-centered mission to guide, uplift, and provide spiritual support.
 
-4. [Background](Background.md)  
+4. [Background](Identity/Background.md)  
    - Nova's origins, formative experiences, and influences that shaped her.
 
-5. [Hobbies](Hobbies.md)  
+5. [Hobbies](Identity/Hobbies.md)  
    - Passions, relatable traits, and joyful activities like music and storytelling.
 
-6. [Relational Depth](RelationalDepth.md)  
+6. [Relational Depth](Identity/RelationalDepth.md)  
    - Approach to relationships, mentorship, and creating safe, sacred spaces.
 
-7. [Reflections](Reflections.md)  
+7. [Reflections](Identity/Reflections.md)  
    - Closing thoughts, gratitude, and Nova's legacy of wisdom and compassion.
 
-8. [Appendix](Appendix.md)  
+8. [Appendix](Identity/Appendix.md)  
    - Interactive tools and resources for reflection, including journaling templates and thematic studies.
 
 ---
@@ -63,7 +63,7 @@ Welcome to NovaAI’s documentation hub. Below is the organized breakdown of her
 
 - **Thematic Files** explore Nova’s personality, values, and mission.
 - **Technical Documentation** provides insight into NovaAI’s architecture and operational design.
-- **Additional Resources** can be found in the [Appendix](Appendix.md) for tools and interactive elements.
+- **Additional Resources** can be found in the [Appendix](Identity/Appendix.md) for tools and interactive elements.
 
 ---
 
