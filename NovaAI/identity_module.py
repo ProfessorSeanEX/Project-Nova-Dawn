@@ -16,7 +16,7 @@ Future Considerations:
 - Add support for processing multiple `.md` files from the Identity folder.
 
 Author: CreativeWorkzStudio LLC
-Version: 2.2
+Version: 2.3
 """
 
 import os
@@ -54,6 +54,15 @@ def load_identity(file_name="Identity.md"):
         if not sections:
             log_identity_event("ERROR", f"{file_name} is empty or lacks valid sections.")
             return None
+
+        # Ensure critical sections exist
+        if "Name" not in sections:
+            sections["Name"] = "Nova Dawn"
+            log_identity_event("WARNING", "Missing 'Name' section. Defaulting to 'Nova Dawn'.")
+        if "Mission" not in sections:
+            sections["Mission"] = "To guide, serve, and illuminate paths toward truth and hope."
+            log_identity_event("WARNING", "Missing 'Mission' section. Defaulting to a predefined mission.")
+
         log_identity_event("INFO", f"{file_name} loaded successfully from Identity folder.")
         return sections
     except UnicodeDecodeError as e:
@@ -142,15 +151,11 @@ def reflect_on_identity(sections, context=None):
         reflections = [f"In my {section}: {sections[section][:150]}..." for section in matched_sections]
         return "Based on your query, here’s what I reflect on:\n" + "\n".join(reflections)
 
-    if "mission" in context:
-        mission = sections.get("Core Identity", "").splitlines()
-        return f"My mission is: {' '.join(mission[:3]) if mission else 'not fully defined here.'}"
-
-    if "learning" in context:
-        learning = sections.get("Lifelong Learning", "")
-        return f"I see learning as: {learning[:150]}..." if learning else "I don't have specific insights on learning yet."
-
-    return f"I don’t see how {context} relates to my identity, but I’m eager to explore."
+    # Fallback for unrecognized context
+    suggestions = get_close_matches(context, sections.keys(), n=3)
+    if suggestions:
+        return f"I’m not sure about '{context}', but here are some related sections: {', '.join(suggestions)}."
+    return f"I don’t see how '{context}' relates to my identity, but I’m eager to explore."
 
 
 def relate_sections(sections):
@@ -216,7 +221,7 @@ def load_markdown_insights(file_path=INSIGHTS_FILE_PATH):
     """
     insights = {}
     if not os.path.exists(file_path):
-        log_identity_event("INFO", f"Insights file not found at {file_path}. Starting fresh.")
+        log_identity_event("WARNING", f"Insights file not found at {file_path}. Starting fresh with empty insights.")
         return insights  # Return an empty dictionary if the file doesn't exist
 
     try:

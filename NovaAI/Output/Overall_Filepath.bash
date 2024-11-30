@@ -102,6 +102,8 @@ C:\USERS\SEANJ\ONEDRIVE\DOCUMENTS\GITHUB\PROJECT-NOVA-DAWN\NOVAAI
 ª   ª       Concept Log 3.md
 ª   ª       Concept Log 4.md
 ª   ª       Concept Log 5.md
+ª   ª       Concept Log 6.md
+ª   ª       Concept Log 7.md
 ª   ª       __init__.py
 ª   ª       
 ª   +---Identity
@@ -366,13 +368,29 @@ C:\USERS\SEANJ\ONEDRIVE\DOCUMENTS\GITHUB\PROJECT-NOVA-DAWN\NOVAAI
 ª   ª       __init__.py
 ª   ª       
 ª   +---Core
-ª   ª       __init__.py
-ª   ª       
+ª   ª   ª   insight.md
+ª   ª   ª   lgm_library.py
+ª   ª   ª   nlg_library.py
+ª   ª   ª   thoughts_processor.py
+ª   ª   ª   voice_generator.py
+ª   ª   ª   __init__.py
+ª   ª   ª   
+ª   ª   +---__pycache__
+ª   ª           lgm_library.cpython-313.pyc
+ª   ª           nlg_library.cpython-313.pyc
+ª   ª           thoughts_processor.cpython-313.pyc
+ª   ª           voice_generator.cpython-313.pyc
+ª   ª           __init__.cpython-313.pyc
+ª   ª           
 ª   +---Logs
+ª   ª       2024-11-28.log
 ª   ª       __init__.py
 ª   ª       
 ª   +---RelationalData
-ª           __init__.py
+ª   ª       __init__.py
+ª   ª       
+ª   +---__pycache__
+ª           __init__.cpython-313.pyc
 ª           
 +---MillenniumOS
 ª   ª   __init__.py
@@ -640,4 +658,5 @@ C:\USERS\SEANJ\ONEDRIVE\DOCUMENTS\GITHUB\PROJECT-NOVA-DAWN\NOVAAI
 ª       
 +---__pycache__
         identity_module.cpython-313.pyc
+        __init__.cpython-313.pyc
         

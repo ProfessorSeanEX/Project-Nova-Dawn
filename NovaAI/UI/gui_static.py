@@ -10,12 +10,8 @@ Key Features:
 - Real-time clock display.
 - Chat-based interaction for sending user input and displaying Nova's responses.
 
-Important:
-This script does not perform backend processing; it forwards user input to
-main.py's `process_user_input` function and displays the resulting responses.
-
 Author: CreativeWorkzStudio LLC
-Version: 1.0
+Version: 1.2
 """
 
 import tkinter as tk
@@ -60,7 +56,10 @@ def update_state(new_state, frame):
     """Update Nova's state and refresh the displayed image."""
     global current_state
     current_state = new_state
-    display_image(NOVA_STATES[current_state], frame)
+    if new_state in NOVA_STATES:
+        display_image(NOVA_STATES[new_state], frame)
+    else:
+        print(f"Warning: State '{new_state}' not defined in NOVA_STATES.")
 
 
 def get_current_time():
@@ -78,9 +77,12 @@ def launch_gui(process_user_input):
     # Initialize main application window
     root = tk.Tk()
     root.title("Nova Dawn: Command Interface")
-    root.geometry("800x600")
-    root.rowconfigure(0, weight=1)
-    root.columnconfigure(0, weight=1)
+    root.geometry("800x600")  # Default size
+    root.minsize(600, 400)  # Minimum size to prevent extreme shrinking
+
+    # Enable dynamic resizing
+    root.grid_rowconfigure(0, weight=1)
+    root.grid_columnconfigure(0, weight=1)
 
     # Main Frame
     main_frame = tk.Frame(root, bg="lightgray")
@@ -88,12 +90,12 @@ def launch_gui(process_user_input):
 
     # Dynamic State Image
     image_frame = tk.Frame(main_frame, bg="lightgray")
-    image_frame.pack()
+    image_frame.grid(row=0, column=0, sticky="nsew")
     display_image(NOVA_STATES["active"], image_frame)
 
     # Real-Time Clock
     clock_label = tk.Label(main_frame, text="", bg="lightgray", font=("Arial", 14), anchor="e")
-    clock_label.pack(fill=tk.X, padx=10, pady=(5, 0))
+    clock_label.grid(row=1, column=0, sticky="ew", padx=10, pady=(5, 0))
 
     def update_clock():
         """Update the clock label with the current time."""
@@ -104,11 +106,19 @@ def launch_gui(process_user_input):
 
     # Chat Display Area
     chat_display = tk.Text(main_frame, wrap=tk.WORD, bg="white", state=tk.DISABLED, font=("Arial", 12))
-    chat_display.pack(fill=tk.BOTH, expand=True, padx=10, pady=(5, 0))
+    chat_display.grid(row=2, column=0, sticky="nsew", padx=10, pady=(5, 0))
 
     # Input Area
     chat_input = tk.Text(main_frame, height=3, font=("Arial", 12), wrap=tk.WORD)
-    chat_input.pack(fill=tk.X, padx=10, pady=5)
+    chat_input.grid(row=3, column=0, sticky="ew", padx=10, pady=5)
+
+    # Submit Button
+    submit_button = tk.Button(main_frame, text="Send", command=lambda: process_input(), font=("Arial", 12))
+    submit_button.grid(row=3, column=1, padx=10, pady=5, sticky="e")
+
+    # Enable resizing of the main chat display area
+    main_frame.grid_rowconfigure(2, weight=1)  # Chat display grows vertically
+    main_frame.grid_columnconfigure(0, weight=1)  # Chat display and input area grow horizontally
 
     # Input History Management
     input_history = []
@@ -127,7 +137,8 @@ def launch_gui(process_user_input):
 
         # Log the user input as a relational event
         update_state("processing", image_frame)  # Switch to processing state
-        timestamp = clock_compass.log_and_evaluate(f"GUI Input: {user_input}", "relational")["timestamp"]
+        log_entry = clock_compass.log_and_evaluate(f"GUI Input: {user_input}", "relational")
+        timestamp = log_entry["timestamp"]
 
         # Display user input with timestamp
         chat_display.configure(state=tk.NORMAL)
@@ -135,47 +146,22 @@ def launch_gui(process_user_input):
         chat_input.delete("1.0", tk.END)
 
         # Get response from backend
-        response = process_user_input(user_input)
+        try:
+            response = process_user_input(user_input)
+            log_entry = clock_compass.log_and_evaluate(f"Nova Response: {response}", "relational")
+            response_timestamp = log_entry["timestamp"]
 
-        # Log Nova's response
-        timestamp = clock_compass.log_and_evaluate(f"Nova Response: {response}", "relational")["timestamp"]
+            # Display Nova's response with timestamp
+            chat_display.insert(tk.END, f"[{response_timestamp}] Nova: {response}\n\n")
+        except Exception as e:
+            chat_display.insert(tk.END, f"[Error] Nova: Unable to process your input. {str(e)}\n\n")
 
-        # Display Nova's response with timestamp
-        chat_display.insert(tk.END, f"[{timestamp}] Nova: {response}\n\n")
         chat_display.configure(state=tk.DISABLED)
         chat_display.see(tk.END)  # Auto-scroll to the bottom
 
         update_state("active", image_frame)  # Return to active state
 
-    def on_input_key(event):
-        """Handle key presses in the input area."""
-        nonlocal history_index
-        if event.keysym == "Return":
-            if event.state & 0x0001:  # Check if Shift is held
-                chat_input.insert(tk.INSERT, "\n")  # Add a new line
-            else:
-                process_input()  # Submit the message
-                return "break"  # Prevent default behavior of adding a new line
-        elif event.keysym == "Up":
-            if history_index > 0:
-                history_index -= 1
-                chat_input.delete("1.0", tk.END)
-                chat_input.insert("1.0", input_history[history_index])
-        elif event.keysym == "Down":
-            if history_index < len(input_history) - 1:
-                history_index += 1
-                chat_input.delete("1.0", tk.END)
-                chat_input.insert("1.0", input_history[history_index])
-            else:
-                chat_input.delete("1.0", tk.END)
-
-    chat_input.bind("<KeyPress-Return>", on_input_key)
-    chat_input.bind("<KeyPress-Up>", on_input_key)
-    chat_input.bind("<KeyPress-Down>", on_input_key)
-
-    # Submit Button
-    submit_button = tk.Button(main_frame, text="Send", command=process_input, font=("Arial", 12))
-    submit_button.pack(side=tk.RIGHT, padx=10, pady=5)
+    chat_input.bind("<KeyPress-Return>", process_input)
 
     # Start GUI
     root.mainloop()
